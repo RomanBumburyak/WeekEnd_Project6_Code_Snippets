@@ -59,7 +59,7 @@ app.use(function (req, res, next) {
 })
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'NO secrets',
     resave: false,
     saveUninitialized: false,
     store: new(require('express-sessions'))({
@@ -73,6 +73,6 @@ app.use(flash());
 
 app.use(routes);
 
-app.listen(3001, function() {
-  console.log("App is running on localhost:3001");
+app.listen(8080, function() {
+  console.log("PARTY running on localhost:8080");
 });

@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+
+{{#snippets}}
+
+  <h1>{{username}}</h1>
+  <p> title: {{title}}</p>
+  <p> body: {{body}}</p>
+  <p>optional notes: {{optionalNotes}}</p>
+  <p>language: {{#language}} <a href="/language/{{.}}">{{.}} </a> {{/language}} </p>
+  <p> tags: {{#tags}} <a href="/tags/{{.}}">{{.}} </a> {{/tags}} </p>
+
+
+
+  <form class="" action="/destroy/{{id}}" method="post">
+      <button name="button">delete</button>
+    </form>
+
+
+    <form class="" action="/edit_snippet/{{id}}" method="post">
+        <button name="button">Edit</button>
+      </form>
+
+
+{{/snippets}}

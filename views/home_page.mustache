@@ -1,0 +1,52 @@
+
+<title>Home</title>
+
+<h1> Create your Snippets! </h1>
+
+
+<form action="/home_page" method="post">
+<div id='snip_format'>
+
+<input type="text" name="title" placeholder="job:">
+<input type="text" name="body" placeholder="company:">
+<textarea name="optionalNotes" rows="8" cols="80" placeholder="optionalNotes:"></textarea>
+<input type="text" name="language" placeholder="language:">
+<input type="text" name="tags" placeholder="tags:">
+<button type="Submit">Create</button>
+
+</div>
+
+</form>
+
+
+
+
+
+<div class="snips_on_a_page">
+
+{{#snippets}}
+
+ <a href="/individual_snippet/{{id}}"> <h3> {{username}} </h3> </a>
+  <p> title: {{title}}</p>
+  <p> body: {{body}}</p>
+  <p>optional notes: {{optionalNotes}}</p>
+
+
+  <p>language: {{#language}} <a href="/language/{{.}}">{{.}} </a> {{/language}} </p>
+  <p> tags: {{#tags}} <a href="/tags/{{.}}">{{.}} </a> {{/tags}} </p>
+
+
+
+  <form class="" action="/destroy/{{id}}" method="post">
+      <button name="button">delete</button>
+    </form>
+
+
+    <form class="" action="/edit_snippet/{{id}}" method="post">
+        <button name="button">Edit</button>
+      </form>
+
+
+{{/snippets}}
+
+</div>
