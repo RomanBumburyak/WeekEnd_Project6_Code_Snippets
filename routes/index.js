@@ -161,10 +161,14 @@ router.post("/destroy/:id", function (req,res) {
 })
 ///////////////////////////////////
 router.get("/individual_snippet/:id", function(req,res){
-  Snippet.findById(req.params.id)
-      .then(function(snippet){
-        res.render("individual_snippet", {snippets:snippet})
-      })
+  console.log(req.params);
+  if (req.params.id !== "main.css") {
+    Snippet.findById(req.params.id)
+        .then(function(snippet){
+          res.render("individual_snippet", {snippets:snippet})
+        })
+  }
+
 })
 
 
